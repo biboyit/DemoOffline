@@ -1,0 +1,9 @@
+<a data-id="<%= CustomerID %>" data-name="<%= CustomerName %>" >   
+	<% if(IsOrderComplete == true) { %>
+	<i class="icon-edit icon-large" />
+	<% } else { %>
+	<i class="icon-accept icon-large" />
+	<% } %>
+	<b><%= CustomerName %></b>
+	<p><%= CustomerID %></p>
+</a>

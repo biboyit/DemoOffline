@@ -1,0 +1,13 @@
+<div data-role="header"  data-position="fixed" data-tap-toggle="false" data-theme='b'> 
+    <a data-role="back" ><i class='icon-angle-left'></i></a>
+    <h3><%= data.Title %></h3>    
+</div>
+<div data-role="content">
+    <div style="text-align:center;">
+        <p><strong><%= data.Message %></strong></p>
+
+        <p><%= data.Description %></p>
+
+        <a href="#settings" data-role="button" data-icon="gear" class="ui-btn-right"><%= i18n.title.settings %></a>
+    </div>
+</div>

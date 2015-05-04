@@ -1,0 +1,27 @@
+<header class="action-bar fixed-top">
+    <a class="action go-back">
+        <i class="icon-up-button"></i>
+        <i class="icon-home"></i>
+        <h1 class="title">
+       <%= i18n.title.stockItemFind %>
+    </h1>  
+    </a>
+      
+</header>
+<div class="content">
+    <ul class="inset">
+        <form class="form-flex">
+            <label class="block-label"><%= i18n.label.stockItemDescription___ %></label>
+            <input id="description" class="input-text" placeholder="<%= i18n.input.stockItemDescription %>" type="text">
+            <label class="block-label"><%= i18n.label.siteID____ %></label>
+            <select id="SiteID" data-native-menu="true">
+                <% _.each(sites, function(site) { %>
+                <option value="<%= site.SiteID %>"><%= site.SiteName %></option>
+                <% }); %>
+            </select>
+            <div class="form-actions center-me">
+                <a class="btn" data-role="button" id="btnNext"><%= i18n.text.next_ %></a>
+            </div>
+        </form>
+    </ul>
+</div>

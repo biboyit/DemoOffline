@@ -1,0 +1,26 @@
+  <a href="#order/<%= data.HeaderID %>" data-id="#<%= data.HeaderID %> - <%= data.CustomerOrderNumber %>" data-name=" <%= data.CustomerName %>   ">
+    <% if(data.Status == "Cancelled") { %>
+
+        <i class="glyphicon glyphicon-trash  icon-large" />
+        <% } else if(data.Status == "Sent") { %>
+
+        <i class="glyphicon glyphicon-ok icon-large" />
+        <% } else { %>
+
+        <i class="glyphicon glyphicon-pencil icon-large" />
+        <% } %>
+
+    <% if(data.CustomerOrderNumber == null) { %>
+
+        &lt;<%= i18n.text.empty %>&gt;
+
+    <% } else { %>
+        <p>
+        <b>#<%= data.HeaderID %> - <%= data.CustomerOrderNumber %></b>
+  <span class="pull-right"><span class="ui-li-count" title="<%= data.OrderDate %>"><%= data.OrderDateFromNow %></span><i class="icon-chevron-right"></i></span>
+</p>
+    <% } %>
+    
+    <%= data.CustomerName %>    
+        
+    </a>

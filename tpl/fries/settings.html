@@ -1,0 +1,66 @@
+<div data-role="header"  data-position="fixed" data-tap-toggle="false" data-theme='b'> 
+    <a data-role="back"><i class='icon-angle-left'></i></a>
+    <h3>Settings</h3>    
+     <a id="save" data-icon="check" class="ui-btn-right">Save</a>
+</div>
+
+<div data-role="content" data-iscroll="true" class="iscroll-content">
+    <div id="message"></div>
+    <form>
+        <ul data-role="listview" data-inset="false">
+            <li data-role="list-divider">Data Source</li>
+            <li data-role="fieldcontain">
+                <label for="serviceUrl">Service URL</label>
+                <input name="serviceUrl" id="serviceUrl" value="<%= serviceRootUrl %>" type="text" data-clear-btn="true">
+            </li>
+            <li data-role="fieldcontain">
+                <fieldset id="serviceType" data-role="controlgroup" data-type="horizontal" data-mini="true">
+                    <legend>Service Type</legend>
+                    <input type="radio" name="serviceType" id="serviceTypeWebService" value="WebService" <%= (useWebApi) ? 'checked=\"checked\"' : '' %>>
+                    <label for="serviceTypeWebService">Web Service</label>
+                    <input type="radio" name="serviceType" id="serviceTypeLocal" value="Local" <%= (!useWebApi) ? 'checked=\"checked\"' : '' %>>
+                    <label for="serviceTypeLocal">Local</label>
+                </fieldset>
+            </li>
+            <% if (!(/Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent))) { %>
+            <li data-role="list-divider">Theme</li>
+            <li data-role="fieldcontain">
+                <label for="enableAndroidTheme">Android Theme</label>
+                <select name="enableAndroidTheme" id="enableAndroidTheme" data-role="slider" data-mini="true">
+                    <option value="off" <%= (!enableAndroidTheme) ? 'selected=\"\"' : '' %>>Off</option>
+                    <option value="on" <%= (enableAndroidTheme) ? 'selected=\"\"' : '' %>>On</option>
+                </select>
+            </li>
+            <li data-role="fieldcontain">
+                <label for="enableBB10Theme">BlackBerry 10 Theme</label>
+                <select name="enableBB10Theme" id="enableBB10Theme" data-role="slider" data-mini="true">
+                    <option value="off" <%= (!enableBB10Theme) ? 'selected=\"\"' : '' %>>Off</option>
+                    <option value="on" <%= (enableBB10Theme) ? 'selected=\"\"' : '' %>>On</option>
+                </select>
+            </li>
+            <li data-role="fieldcontain">
+                <label for="enableBootstrapTheme">Bootstrap Theme</label>
+                <select name="enableBootstrapTheme" id="enableBootstrapTheme" data-role="slider" data-mini="true">
+                    <option value="off" <%= (!enableBootstrapTheme) ? 'selected=\"\"' : '' %>>Off</option>
+                    <option value="on" <%= (enableBootstrapTheme) ? 'selected=\"\"' : '' %>>On</option>
+                </select>
+            </li>
+            <li data-role="list-divider">Developer</li>
+            <li data-role="fieldcontain">
+                <label for="simulateBB10">Simulate BlackBerry 10</label>
+                <select name="simulateBB10" id="simulateBB10" data-role="slider" data-mini="true">
+                    <option value="off" <%= (!simulateBB10) ? 'selected=\"\"' : '' %>>Off</option>
+                    <option value="on" <%= (simulateBB10) ? 'selected=\"\"' : '' %>>On</option>
+                </select>
+            </li>
+            <li data-role="fieldcontain">
+                <label for="simulateAndroid">Simulate Android</label>
+                <select name="simulateAndroid" id="simulateAndroid" data-role="slider" data-mini="true">
+                    <option value="off" <%= (!simulateAndroid) ? 'selected=\"\"' : '' %>>Off</option>
+                    <option value="on" <%= (simulateAndroid) ? 'selected=\"\"' : '' %>>On</option>
+                </select>
+            </li>
+            <% } %>
+        </ul>
+    </form>
+</div>

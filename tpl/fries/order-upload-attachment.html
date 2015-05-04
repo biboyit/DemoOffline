@@ -1,0 +1,16 @@
+<header class="action-bar fixed-top">
+    <a class="action go-back" data-ignore="true">
+        <i class="icon-up-button"></i>
+        <i class="icon-home"></i>
+        <h1 class="title"><%= i18n.title.uploadAttachment %></h1>
+    </a>     
+</header>
+<div class="content">
+    <ul class="list-unstyled inset">
+        <li><a id="btnTakePicture" data-role="button" class="ui-btn-submit"><%= i18n.li.takePicture %></a></li>
+        <li><a id="btnSelectPicture" data-role="button" class="ui-btn-submit"><%= i18n.li.selectPictureFromLibrary %></a></li>
+        <li><a id="btnUpload" data-role="button" class="ui-btn-submit"><%= i18n.li.uploadPicture %></a></li>
+        <li class="list-divider"><%= i18n.li.image %></li>
+        <li><img style="width: 240px; display: block;" id="camera_image" src="" /></li>            
+    </ul>
+</div>

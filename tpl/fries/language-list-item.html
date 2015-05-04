@@ -1,0 +1,18 @@
+  <a href="#language/<%= data.LanguageCode %>" data-id="#<%= data.Id %> - <%= data.LanguageCode %> - <%= data.Name %>" data-name=" <%= data.DisplayName %>   ">
+    <% if(data.IsSelected == true) { %>
+
+        <i class="glyphicon glyphicon-check  icon-large" />
+        <% } else { %>
+
+        <i class="glyphicon glyphicon-unchecked icon-large" />
+        <% } %>
+
+        <b><%= data.DisplayName %></b>
+<p>
+    <% if(data.IsDefault == true) { %>
+        <%= i18n.text.default %>
+    <% } else { %>
+        &nbsp;
+    <% } %>
+</p>        
+    </a>

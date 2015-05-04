@@ -1,0 +1,30 @@
+<header class="action-bar fixed-top">
+    <a class="action go-back" data-ignore="true">
+        <i class="icon-up-button"></i>
+        <i class="icon-home"></i>
+        <h1 class="title"><%= i18n.title.stockOnHand %></h1>
+    </a>
+</header>
+<div class="content">
+    <ul class="list inset">
+        <li><b><%= i18n.li.inventoryID___ %></b><%= detail.InvtID %></li>
+        <li><b><%= i18n.li.description__ %></b> <%= detail.Descr %></li>
+        <li><b><%= i18n.li.site__ %></b> <%= SiteID %></li>
+    </ul>
+    <table class="table">
+        <thead>
+            <tr>
+                <th><%= i18n.text.qtyAvailable %></th>
+                <th><%= i18n.text.qtyOnHand %></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% _.each(list, function(qty) { %>
+            <tr>
+                <td style="text-align: right"><%= qty.QtyAvail %></td>
+                <td style="text-align: right"><%= qty.QtyOnHand %></td>
+            </tr>
+            <% }); %>  
+        </tbody>
+    </table>
+</div>

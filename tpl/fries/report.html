@@ -1,0 +1,31 @@
+<div id="container">
+    <header class="action-bar fixed-top ">
+        <div id="hamburger" style="left: 0px; top: 13px">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="hamburger-action action">           
+            <i class="icon-home"></i>           
+            <h1 class="title"><%= i18n.title.reports %></h1>
+        </div>
+    </header>
+     <nav id="slidemenu" class="clear">
+        <ul id="orderfilter">
+            <li class="list-divider"><%= i18n.li.menu %></li>
+            <li><a href="#orders"><i class="glyphicon glyphicon-file icon-small-single" /><%= i18n.li.orders %></a></li>
+            <li><a href="#customers"><i class="glyphicon glyphicon-user icon-small-single" /><%= i18n.li.customers %></a></li>
+			<li><a href="#language"><i class="glyphicon glyphicon-globe icon-small-single" /><%= i18n.li.language %></a></li>
+            <li><a id="A1" href="#logout"><i class="glyphicon glyphicon-off icon-small-single" /><%= i18n.li.signOut %></a></li>
+        </ul>
+    </nav>   
+    <div id="content" class="content">
+        <ul class="list inset">
+            <li class="list-divider"><%= i18n.li.selectReport %></li>
+            <li class="list-item-single-line"><a href="#reportstockonhand"><i class="icon-view-as-list icon-large-single" /><span class="i-class"><%= i18n.li.stockOnHand %></span></a></li>
+            <li class="list-item-single-line"><a href="#reportorderstatus"><i class="icon-view-as-list icon-large-single" /><span class="i-class"><%= i18n.li.orderStatus %></span></a></li>
+        </ul>
+    </div>
+    <div id="hamburger-overlay"></div>
+</div>
+

@@ -1,0 +1,137 @@
+
+<header class="action-bar fixed-top">
+    <a id="btnBack" class="action" data-ignore="true">
+        <i class="icon-up-button"></i>
+        <i class="icon-home"></i>
+        <h1 class="title"><%= i18n.title.orders %></h1>
+    </a>
+    
+    <div class="pull-right"> 
+    <a id="btnAddProduct" class="app-icon action"><i class="icon-new"></i> </a>
+    <a id="btnDelete" href="javascript: void(0);" class="app-icon action"><i class="icon-trash"></i> </a>
+    <a id="btnSubmit" href="javascript: void(0);" class="app-icon action"><i class="icon-send"></i> </a>
+    </div>
+</header>
+<nav class="tab-fixed">
+    <ul id="navclick" class="tab-inner">
+        <li id="tab1"><a data-ignore="true"><%= i18n.li.details %></a></li>                       
+        <li id="tab2"><a data-ignore="true"><%= i18n.li.items %></a></li>
+        <li id="tab3"><a data-ignore="true"><%= i18n.li.attachment %></a></li>
+    </ul>
+</nav>
+<div class="content">
+    <ul>
+        <li id="detailtab" class="tab-item">
+            <div class="inset">
+                <form class="form-flex">
+                    <label class="block-label"><%= i18n.label.orderNumber %></label>
+                    <div class="inset"><%= order.HeaderID %></div>
+                    <label class="block-label"><%= i18n.label.customerOrderNumber %></label>
+                    <% if (order.Status != 'Draft') { %>
+                        <div class="inset"><%= order.CustomerOrderNumber %></div>
+                    <% } else { %>
+                    <input name="CustomerOrderNumber" id="CustomerOrderNumber" type="text" value="<%= order.CustomerOrderNumber %>" class="input-text">
+                    <% } %>  
+                    <label class="block-label"><%= i18n.label.customer %></label>
+                    <% if (order.Status != 'Draft') { %>
+                    <div><%= order.CustomerName %></div>
+                    <% } else { %>                   
+                    <ul class="list">
+                     <% if (customer.CustomerName == '') { %>
+                     <li><a class="CustomerName"><%= order.CustomerName %><span class="pull-right"><i class="icon-chevron-right"></i></span></a></li>
+                     <% } else { %>
+                     <li><a class="CustomerName"><%= customer.CustomerName %><span class="pull-right"><i class="icon-chevron-right"></i></span></a></li>
+                     <% } %>
+                    </ul>               
+                     <%  } %> 
+                     <label class="block-label"><%= i18n.label.siteID_ %></label>
+                     <% if (order.Status != 'Draft') { %>
+                        <div class="inset">
+                            <%  var site = _.find(sites, function(site) { return site.SiteID == order.SiteID }); if (site != undefined) { site = site.SiteName; } %>
+                            <%= site %>                        
+                        </div>
+                     <% } else { %>
+                        <select id="SiteID">
+                            <% _.each(sites, function(site) { %>
+                            <option value="<%= site.SiteID %>" <%= order.SiteID == site.SiteID ? 'selected' : '' %>><%= site.SiteName %></option>
+                            <% }); %>
+                        </select>
+                     <% } %>
+                     <label class="block-label"><%= i18n.label.shipVia____ %><%= order.ShipViaID %></label>
+                     <% if (order.Status != 'Draft') { %>
+                        <div class="inset">
+                            <%  var shipvia = _.find(shipvia, function(ship) { return ship.ShipViaID == order.ShipViaID }); if (shipvia != undefined) { shipvia = shipvia.ShipViaName; } %>
+                            <%= shipvia %>                        
+                        </div>
+                     <% } else { %>
+                        <select id="ShipViaID">
+                            <% _.each(shipvia, function(ship) { %>
+                            <option value="<%= ship.ShipViaID %>" <%= order.ShipViaID == ship.ShipViaID ? 'selected' : '' %>><%= ship.ShipViaName %></option>
+                            <% }); %>
+                        </select>
+                     <% } %>
+                     <label class="block-label"><%= i18n.label.shipTo__ %></label>
+                     <% if (order.Status != 'Draft') { %>
+                                <div class="inset">
+                                      <%  var ship = _.find(shipaddress, function(address) { return address.ShipToID == order.ShipToID });  if (ship != undefined) ship = ship.ShipToName; %>
+                                      <%= ship %>                        
+                                </div>
+                            <% } else { %>
+                        <select id="ShipToID">
+                            <% if (order.ShipToID == null) { %>
+                            <option selected></option>
+                            <% }; %>
+                            <% _.each(shipaddress, function(address) { %>
+                            <option value="<%= address.ShipToID %>" <%= order.ShipToID == address.ShipToID ? 'selected' : '' %>>
+                                <%= address.ShipToName %></option>
+                            <% }); %>
+                        </select>
+                         <% } %>
+                    <label class="block-label"><%= i18n.label.orderDate %></label>  
+                    <div class="inset"><%= order.OrderDate %></div>
+                    <label class="block-label"><%= i18n.label.remarks %></label>
+                    <% if (order.Status != 'Draft') { %>
+                        <div class="inset"><%= order.Remarks %></div>
+                    <% } else { %>
+                    <input name="Remarks" id="Remarks" class="input-text" value="<%= order.Remarks %>"
+                        type="text">
+                    <% } %>
+                </form>                
+            </div>
+        </li>
+        <li id="listtab" class="tab-item">
+            <ul id="OrderLineList" class="list inset" > 
+           </ul> 
+        </li>
+        <li id="attachtab" class="tab-item">
+             <div class="inset">
+                <form class="form-flex">
+                    <label class="block-label"><%= i18n.label.createdDate %></label>
+                    <div class="inset"><%= order.OrderAttachment.CreatedDateTime %></div>
+                    <label class="block-label"><%= i18n.label.referenceNumber %></label>
+                    <% if (order.Status != 'Draft') { %>
+                        <div class="inset"><%= order.OrderAttachment.ReferenceNbr %></div>
+                    <% } else { %>
+                    <input name="OrderAttachment_ReferenceNbr" id="OrderAttachment_ReferenceNbr" placeholder="" value="<%= order.OrderAttachment.ReferenceNbr %>" class="input-text" type="text">
+                    <% } %>
+                    <label class="block-label"><%= i18n.label.description %></label>
+                    <% if (order.Status != 'Draft') { %>
+                        <div class="inset"><%= order.OrderAttachment.Description %></div>
+                    <% } else { %>
+                    <input name="OrderAttachment_Description" id="OrderAttachment_Description" placeholder="" value="<%= order.OrderAttachment.Description %>"
+                        type="text" class="input-text">
+                    <% } %>
+                    <label class="block-label"><%= i18n.label.attachment %></label>
+                    <ul class="list-unstyled inset ">
+                       <% if (order.OrderAttachment.hasFile == 'Y') { %>                    
+                       <li><a href="#vieworderattachment/<%= order.HeaderID %>"  class="button ui-btn-submit"><%= i18n.li.viewAttachment %></a></li>
+                       <% } %>
+                       <% if (order.Status == 'Draft') { %>             
+                           <li><a data-role="button" id="btnUpload" class="button ui-btn-submit"><%= i18n.li.uploadFile %></a>      </li>
+                    <% } %>
+                    </ul>                   
+                </form>
+            </div>
+        </li>
+    </ul>
+</div>

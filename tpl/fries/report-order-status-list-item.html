@@ -1,0 +1,12 @@
+<a href="#reportorderstatusdetail/<%= data.OrderNbr %>" data-id="<%= data.CustomerOrderNbr %>">
+	<b><%= i18n.text.orderNo__ %><%= data.OrderNbr %></b>
+	<p><%= i18n.text.custOrderNo__ %><%= data.CustomerOrderNbr %><span class="pull-right">
+        <% if (data.OrderDate != 'Mon 01 01, 0001') { %>
+		<%= i18n.text.postedOn_ %><%= data.OrderDate %>
+        <% } %>
+	</span></p>
+	<p><%= i18n.text.shipTo____ %><%= data.ShipToName %>	
+	</p> 
+</a>
+
+

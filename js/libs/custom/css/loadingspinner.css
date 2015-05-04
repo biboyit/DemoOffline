@@ -1,0 +1,52 @@
+﻿.loading{
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  padding: $size;
+  vertical-align: middle;
+  text-align: center;
+  background-color: transparent;
+  border: 5px solid transparent;
+  border-top-color: $color;
+  border-bottom-color: $color;
+  border-radius: 50%;
+}
+
+.outer{
+  animation: spin 1s infinite;
+}
+
+.inner{
+  animation: spin 1s infinite;
+}
+
+@keyframes spin{
+  0%: {
+    transform: rotateZ(0deg);
+  }
+  100%: {
+    transform: rotateZ(360deg);
+  }
+}
+
+/* styling */
+ html {
+	width: 100%;
+	height: 100%;
+	background: radial-gradient(circle, #fff 0%, #aaa 100%) no-repeat;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+body {
+	text-align: center;
+	display: table;
+	width: 100%;
+	height: 100%;
+	overflow-x: hidden;
+	overflow-y: hidden;
+}
+#wrap {
+	box-sizing: border-box;
+	display: table-cell;
+	vertical-align: middle;
+}

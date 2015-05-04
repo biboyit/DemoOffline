@@ -1,0 +1,46 @@
+<header class="action-bar fixed-top">
+    <a href="#customers" class="action" data-ignore="true">
+        <i class="icon-up-button"></i>
+        <i class="icon-home"></i>
+        <h1 class="title"><%= i18n.title.customer %>       
+        </h1>
+    </a>
+</header>
+<div class="content">
+    <ul class="list inset">
+        <li class="list-divider"><%= i18n.title.customer %></li>
+        <li class="list-item-single-line">
+            <a href="#customer/<%= data.CustomerID %>/orders">
+                <h4><%= data.CustomerName %></h4>
+                <%= data.CustomerID %></a>
+        </li>
+        <li class="list-item-multi-line"><%= data.Address1 %><br />
+            <%= data.Address2 %><br />
+            <%= data.Zip %> <%= data.City %> <%= data.State %> <%= data.Country %>
+        </li>
+        <li><a href="#customer/<%= data.CustomerID %>/map/<%= data.mapSearchKeyword %>"><i class="icon-map-marker" /><%= i18n.li.viewmap %></a></li>
+        <li class="list-divider"><%= i18n.li.contact %></li>
+        <!--<li><i class="icon-person icon-medium-single" /><%= data.PIC %>&nbsp;</li>-->
+        <li><a href="tel:<%= data.Phone %>"><i class="icon-call icon-medium-single" /><%= data.Phone %></a>&nbsp;</li>
+        <li><a href="mailto:<%= data.Email %>"><i class="icon-mail icon-medium-single" /><%= data.Email %></a>&nbsp;</li>
+        <li class="list-divider"><%= i18n.li.creditCheck %></li>
+        <% if(data.IsExceedCreditLimit) { %>
+        <li><strong style="color: red"><%= i18n.message.accountExceedCreditLimit %></strong></li>
+        <% } %>
+        <li><%= i18n.li.totalOutstanding %>
+            <span class="pull-right">$ <%= data.Outstanding %></span>
+        </li>
+        <li>[0 - 30]
+            <span class="pull-right">$ <%= data.Outstanding1 %></span>
+        </li>
+        <li>[31 - 60]
+            <span class="pull-right">$ <%= data.Outstanding2 %></span>
+        </li>
+        <li>[61 - 90]
+            <span class="pull-right">$ <%= data.Outstanding3 %></span>
+        </li>
+        <li>[90+]
+            <span class="pull-right">$ <%= data.Outstanding4 %></span>
+        </li>
+    </ul>
+</div>

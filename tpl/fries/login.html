@@ -1,0 +1,69 @@
+<style>
+    body {
+        padding-top: 40px;
+        padding-bottom: 40px;
+        background-color: #fff;
+    }
+
+    .form-signin {
+        max-width: 330px;
+        padding: 15px;
+        margin: 0 auto;
+    }
+
+        .form-signin .form-signin-heading,
+        .form-signin .checkbox {
+            margin-bottom: 10px;
+        }
+
+        .form-signin .checkbox {
+            font-weight: normal;
+        }
+
+        .form-signin .form-control {
+            position: relative;
+            font-size: 16px;
+            height: auto;
+            padding: 10px;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+            .form-signin .form-control:focus {
+                z-index: 2;
+            }
+
+        .form-signin input[type="text"] {
+            margin-bottom: -1px;
+            border-bottom-left-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+
+        .form-signin input[type="password"] {
+            margin-bottom: 10px;
+            border-top-left-radius: 0;
+            border-top-right-radius: 0;
+        }
+
+    .main-image-wrapper {
+        text-align: center;
+        margin: 50px 0;
+    }
+</style>
+
+<div class="content">
+    <div class="container">
+        <div id="login" class="form-signin">
+            <div class="main-image-wrapper">
+                <img src="js/libs/fries/themes/img/login.png" />
+            </div>
+            <input type="userName" class="form-control" placeholder="<%= i18n.input.username %>" id="userName" value="<%= data.username %>"><br />
+            <input type="password" type="text" class="form-control" placeholder="<%= i18n.input.password %>" id="password" value="<%= data.password %>">
+            <br>
+            <button class="btn btn-lg btn-primary btn-block btn-login" data-loading-text="<%= i18n.input.checkingUser %>" id="loginButton"><%= i18n.button.logIn %></button>                        
+            <input type="checkbox" id="chkRemember" <% if(data.isRemember) { %> checked="checked" <% } %> style="zoom:1.5" /> <span style="font-size:16px; margin-top:5px; position:absolute"><%= i18n.checkBox.rememberMe %></span>
+        </div>
+    </div>
+
+</div>

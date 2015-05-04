@@ -1,0 +1,31 @@
+<header class="action-bar fixed-top">
+    <a class="action go-back" data-ignore="true">
+        <i class="icon-up-button"></i>
+        <i class="icon-home"></i>
+        <h1 class="title">
+        <%= i18n.title.addItem %>
+    </h1> 
+    </a>    
+    <div class="pull-right"> 
+    <a href="javascript: void(0);" id="delete" class="app-icon action"><i class="icon-trash"></i> </a>
+    <a href="javascript: void(0);" id="save" class="app-icon action"><i class="icon-send"></i> </a>
+    </div>
+</header>
+<div class="content">
+    <div class="inset">
+          <form class="form-flex" method="post">
+            <label class="block-label"><%= i18n.label.inventoryID %></label>
+            <div class="inset"><%= item.InvtID  %></div>
+              <label class="block-label"><%= i18n.label.inventoryDescr %></label>
+            <div class="inset"><%= product.Descr  %></div>
+              <label class="block-label"><%= i18n.label.inventoryPrice %></label>
+            <div class="inset"><%= product.Price  %></div>
+                <label class="block-label"><%= i18n.label.inventoryQuantityAvailable %></label>
+            <div class="inset"><%= product.QtyAvail  %></div>
+            <label class="block-label"><%= i18n.label.price__ %></label>
+            <input name="Price" id="Price" type="number" class="input-text" value="<%= item.Price  %>">
+            <label class="block-label"><%= i18n.label.quantity__ %></label>
+             <input name="Quantity" id="Quantity" type="number" class="input-text" value="<%= item.Quantity  %>">
+          </form>
+    </div>
+</div>

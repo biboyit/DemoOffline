@@ -1,0 +1,53 @@
+<div id="container">
+    <header class="action-bar fixed-top ">
+        <div id="mainmenu">
+            <div id="hamburger" style="left: 0px; top: 13px">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+            <div class="hamburger-action action">
+                <i class="icon-home"></i>
+                <h1 class="title"><%= i18n.title.orders %></h1>
+            </div>
+            <div class="pull-right">
+                <a href="#neworder"class="app-icon action"><i class="icon-new"></i></a>
+                &nbsp;
+            </div>
+        </div>
+        <div id="submenu">
+            <a class="action go-back" data-ignore="true">
+                <i class="icon-up-button"></i>
+                <i class="icon-home"></i>
+                <h1 class="title"><%= i18n.title.orders %>
+                </h1>
+            </a>
+        </div>
+    </header>
+    <div class="tab-fixed">
+        <div class="tab-inner">
+            <input type="search" name="search-mini" id="search-mini" value="" class="search-query input-text" placeholder="<%= i18n.input.typeKeywordToSearch %>" />
+        </div>
+    </div>
+    <div id="content" class="content">
+        <ul id="OrderList" class="list">
+        </ul>
+    </div>
+    <div id="hamburger-overlay"></div>
+    <nav id="slidemenu" class="clear">
+        <ul id="orderfilter">
+            <li class="list-divider"><%= i18n.li.filter %></li>
+            <li><a id="newOrder" href="#neworder"><i class="glyphicon glyphicon-plus icon-small-single" /><%= i18n.li.New %></a></li>
+            <li><a href="javascript:void(0);" class="filterByStatusMenuItem" data-status=""><i class="glyphicon glyphicon-file icon-small-single" /><%= i18n.li.all %></a></li>
+            <li><a href="javascript:void(0);" class="filterByStatusMenuItem" data-status="draft"><i class="glyphicon glyphicon-pencil icon-small-single" /><%= i18n.li.drafts %></a></li>
+            <li><a href="javascript:void(0);" class="filterByStatusMenuItem" data-status="sent"><i class="glyphicon glyphicon-ok icon-small-single" /><%= i18n.li.sent %></a></li>
+            <li><a href="javascript:void(0);" class="filterByStatusMenuItem" data-status="cancelled"><i class="glyphicon glyphicon-trash icon-small-single" /><%= i18n.li.deleted %></a></li>
+            <li class="list-divider"><%= i18n.li.menu %></li>
+            <li><a href="#customers"><i class="glyphicon glyphicon-user icon-small-single" /><%= i18n.li.customers %></a></li>
+            <li><a href="#reports"><i class="glyphicon glyphicon-stats icon-small-single" /><%= i18n.li.reports %></a></li>
+			<li><a href="#language"><i class="glyphicon glyphicon-globe icon-small-single" /><%= i18n.li.language %></a></li>
+            <li><a id="signout" href="#logout"><i class="glyphicon glyphicon-off icon-small-single" /><%= i18n.li.signOut %></a></li>
+        </ul>
+    </nav>
+</div>
+

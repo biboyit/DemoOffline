@@ -1,0 +1,63 @@
+body{
+  
+}
+.page{
+    
+    z-index: 1; 
+}
+.icon-storage{
+    margin-left: -25px;
+}
+#slidingMenu { 
+    background: #475566; 
+    display: block; 
+    position: absolute;    
+    width: 85%; 
+    left: 0px; 
+    top: 0px; 
+    z-index: 90;
+    display: none;    
+ }
+
+ #slidingMenuContent { 
+   z-index: 99;
+
+ }
+
+
+.blocker{
+    position: absolute;
+    z-index: 40;
+    width: 100%; 
+    display: none;
+ }
+
+#slidingMenu ul { 
+    list-style: none; 
+    background: #33374b; 
+    height: 100%;
+
+  
+}
+
+#slidingMenu ul li { 
+    display: block; 
+    border-bottom: 1px solid #414657;
+}
+
+#slidingMenu ul li a { 
+    position: relative; 
+    display: block;  
+    padding-left: 12px;        
+    text-decoration: none; 
+    font-size: 16px;
+}
+
+#slidingMenu ul li a:hover { 
+    color: #999eac; 
+    text-decoration: none; 
+}
+
+.slide-left{
+
+}
