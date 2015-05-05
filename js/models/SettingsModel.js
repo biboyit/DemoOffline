@@ -7,7 +7,7 @@ define(["Backbone", "BackboneLocalStorage"], function (Backbone) {
         defaults: {
             useWebApi: true,
 			//serviceRootUrl: 'http://172.17.0.132/xxxx/api/',
-          serviceRootUrl: 'http://192.168.0.101/OrderingWEBAPI/api/',
+          serviceRootUrl: 'http://172.17.0.130/OrderingWEBAPI/api/',
            // serviceRootUrl: 'https://uat.ordering-m.my.brightstarcorp.com/orderingapi/api/',
             version: '3.0.0' 
         },
